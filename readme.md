@@ -39,9 +39,6 @@ haxelib run lime rebuild tools
 
 # the hashlink that lime ships
 haxelib run lime rebuild hl
-
-# hxcpp target (use windows instead of linux if that's your thing)
-haxelib run lime rebuild linux
 ```
 
 # compile the extern
@@ -50,33 +47,37 @@ haxelib run lime rebuild linux
 haxelib run hxcpp hello_hl_Build.xml
 ```
 
-This should produce two folders, each containing the hdll
-
-```
-bin
-Export/hl/bin
-```
+This should produce a folder `Export/hl/bin`, each containing the hdll.
 
 # testing
 
 ## compile the pure haxe test
+
+Some of these stps could be scripted but I've left them manual for now because it's less to debug.
+
+Compile the project.
+
+```
+haxe build.hxml
+```
 
 Copy the haxelib binaries to the output folder. Will need changing for Windows.
 
 ```
 cp .haxelib/lime/git/templates/bin/hl/Linux64/* bin
 ```
-Now compile the project.
+
+Copy the extern to the output folder.
 
 ```
-haxe build.hxml
+cp Export/hl/bin/hello.hdll* bin
 ```
 
 Run it, you should see the greeting from c!
 
 ```
 cd bin
-hl main.hl
+./hl main.hl
 ```
 
 ## run the lime test
@@ -85,18 +86,4 @@ hl main.hl
 haxelib run lime test hl
 ```
 
-You should see the green from c, however we have a glitch.
-
-```
-FATAL ERROR : Failed to load function hello@get_greeting
-```
-
-This glitch is usually due to one of the following
-
-- mismatch of hashlink version between the vm used to run it and the source used to compile the extern
-- missing or incompatible hl dependencies
-- other reasons?
-
-We know the versino is correct, as we used the same source to compile hashlink and the extern.
-
-So it could be a missing dependency, or something else?
+You should see the greeting from c!

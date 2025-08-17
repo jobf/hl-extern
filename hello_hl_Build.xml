@@ -24,6 +24,5 @@
 		<lib name="-lhl" unless="windows" />
 		<ext value=".hdll" />
 		<outdir name="Export/hl/bin" />
-		<outdir name="bin" />
 	</target>
 </xml>
