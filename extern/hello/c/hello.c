@@ -34,3 +34,13 @@ HL_PRIM vbyte* HL_NAME(get_greeting_from_chars)(_NO_ARG)
 }
 
 DEFINE_PRIM(_BYTES, get_greeting_from_chars, _NO_ARG);
+
+//------ greet_me(text)
+
+HL_PRIM void HL_NAME(greet_me)(vstring *text)
+{
+	const char *ctext = hl_to_utf8(text->bytes);
+	greetMe(ctext);
+}
+
+DEFINE_PRIM(_VOID, greet_me, _STRING)

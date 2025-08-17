@@ -4,7 +4,13 @@
 	<meta title="hello_hashlink" package="com.sample.hello_hashlink" version="1.0.0" company="hello_hashlink" />
 	<app main="Main" path="Export" file="hello_hashlink" />
 
+	<!-- include test code -->
+	<source path="src" />
+
+	<!-- include app code -->
 	<source path="srcLime" />
+
+	<!-- include extern code -->
 	<source path="extern/hello/hx" />
 
 	<haxelib name="lime" />
