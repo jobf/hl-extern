@@ -1,0 +1,29 @@
+<xml>
+
+	<set name="ROOT" value="${this_dir}" />
+	<set name="LIMEREPO" value=".haxelib/lime/git/" />
+	<set name="HASHLINK" value="${LIMEREPO}/project/lib/hashlink" />
+	<set name="HL_INCLUDE" value="${HASHLINK}/include" />
+	<set name="HL_BIN" value="${HASHLINK}" />
+   <echo value="hashlink include: ${HL_INCLUDE}" />
+   <echo value="hashlink bin: ${HL_BIN}" />
+	<!-- <cppflag value="HASHLINK" /> does not work -->
+	<!-- <cppflag value="-DHASHLINK" /> does not work -->
+
+	<files id="hello">
+		<!-- <compilerflag value="-DHASHLINK=true" /> does not work -->
+		<!-- <compilerflag value="-DHASHLINK" /> does not work -->
+		<compilerflag value="-I${HL_INCLUDE}" />
+		<file name="${ROOT}/extern/hello/cpp/lib.cpp" />
+	</files>
+
+	<target id="default" output="hello" toolid="dll" tool="linker">
+		<files id="hello" />
+		<libpath name="${HASHLINK}"/>
+		<lib name="libhl.lib" if="windows" />
+		<lib name="-lhl" unless="windows" />
+		<ext value=".hdll" />
+		<outdir name="Export/hl/bin" />
+		<outdir name="bin" />
+	</target>
+</xml>

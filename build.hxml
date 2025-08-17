@@ -1,0 +1,4 @@
+--class-path srcPure
+--class-path extern/hello/hx
+--main Main
+--hl bin/main.hl
