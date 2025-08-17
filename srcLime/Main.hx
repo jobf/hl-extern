@@ -4,6 +4,6 @@ class Main extends Application
 {
 	override function onWindowCreate() 
 	{
-		Test.go();
+		Test.run();
 	}
 }

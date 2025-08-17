@@ -1,3 +1,3 @@
 function main(){
-	Test.go();
+	Test.run();
 }

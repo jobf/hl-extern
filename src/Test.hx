@@ -1,4 +1,4 @@
-function go()
+function run()
 {
 	// trace inline string
 	trace(Hello.get_greeting());

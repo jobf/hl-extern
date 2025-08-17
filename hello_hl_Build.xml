@@ -7,9 +7,7 @@
 	<set name="HL_BIN" value="${HASHLINK}" />
    <echo value="hashlink include: ${HL_INCLUDE}" />
    <echo value="hashlink bin: ${HL_BIN}" />
-	<!-- <cppflag value="HASHLINK" /> does not work -->
-	<!-- <cppflag value="-DHASHLINK" /> does not work -->
-
+	
 	<files id="hello_c">
 		<compilerflag value="-I${HL_INCLUDE}" />
 		<compilerflag value="-I${ROOT}/extern/hello/c/lib" />
