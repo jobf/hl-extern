@@ -51,39 +51,18 @@ This should produce a folder `Export/hl/bin`, each containing the hdll.
 
 # testing
 
-## compile the pure haxe test
+## pure haxe
 
-Some of these stps could be scripted but I've left them manual for now because it's less to debug.
-
-Compile the project.
+run pure, you should see the greetings from c!
 
 ```
-haxe build.hxml
+haxe test.hxml
 ```
 
-Copy the haxelib binaries to the output folder. Will need changing for Windows.
+## lime
 
-```
-cp .haxelib/lime/git/templates/bin/hl/Linux64/* bin
-```
-
-Copy the extern to the output folder.
-
-```
-cp Export/hl/bin/hello.hdll* bin
-```
-
-Run it, you should see the greeting from c!
-
-```
-cd bin
-./hl main.hl
-```
-
-## run the lime test
+run lime, you should see the greetings from c!
 
 ```
 haxelib run lime test hl
 ```
-
-You should see the greeting from c!

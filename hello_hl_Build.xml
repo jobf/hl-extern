@@ -10,15 +10,15 @@
 	<!-- <cppflag value="HASHLINK" /> does not work -->
 	<!-- <cppflag value="-DHASHLINK" /> does not work -->
 
-	<files id="hello">
-		<!-- <compilerflag value="-DHASHLINK=true" /> does not work -->
-		<!-- <compilerflag value="-DHASHLINK" /> does not work -->
+	<files id="hello_c">
 		<compilerflag value="-I${HL_INCLUDE}" />
-		<file name="${ROOT}/extern/hello/cpp/lib.cpp" />
+		<compilerflag value="-I${ROOT}/extern/hello/c/lib" />
+		<file name="${ROOT}/extern/hello/c/lib/lib.c" />
+		<file name="${ROOT}/extern/hello/c/hello.c" />
 	</files>
 
 	<target id="default" output="hello" toolid="dll" tool="linker">
-		<files id="hello" />
+		<files id="hello_c" />
 		<libpath name="${HASHLINK}"/>
 		<lib name="libhl.lib" if="windows" />
 		<lib name="-lhl" unless="windows" />

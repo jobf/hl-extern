@@ -1,0 +1,20 @@
+# make output path if it doesn't exist
+--cmd mkdir -p build
+# copy hello.hdll to output path
+--cmd cp Export/hl/bin/hello.hdll build
+# copy hashlink to output path
+--cmd cp .haxelib/lime/git/templates/bin/hl/Linux64/* build
+
+# include the extern
+--class-path extern/hello/hx
+
+# include the app source
+--class-path srcPure
+# define entry point
+--main Main
+
+# build hashlink to output path
+--hl build/main.hl
+
+# enter output path and run the vm
+--cmd (cd build && ./hl main.hl)

@@ -1,7 +1,4 @@
-package;
-
-import Lib;
-
 function main(){
-	trace(Lib.get_greeting());
+	trace(Hello.get_greeting());
+	trace(Hello.get_greeting_from_chars());
 }
