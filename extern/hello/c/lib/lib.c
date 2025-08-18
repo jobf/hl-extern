@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 const char* getGreeting() {
-    return "Hello from c! : external const char*";
+    return "Hello from c! äöü : external const char*";
 }
 
 void greetMe(const char *text) {
-    printf(text);
+    printf("%s", text);
 }

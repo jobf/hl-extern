@@ -1,11 +1,11 @@
 function run()
 {
 	// trace inline string
-	trace(Hello.get_greeting());
+	trace(Hello.getGreeting());
 
 	// trace inline string
-	trace(Hello.get_greeting_from_chars());
+	trace(Hello.getGreeting_from_chars());
 
 	// printf const char*
-	Hello.greet_me("hello from haxe!");
+	Hello.greetMe("hello from haxe äöü !"); // issue in lime, the program stalls
 }
