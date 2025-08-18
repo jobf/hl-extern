@@ -29,19 +29,19 @@
  */
 class Hello 
 {
-	public static function getGreeting():hl.Bytes 
+	public static function getString():hl.Bytes 
 	{
 		return C.get_string();
 	}
 
-	public static function getGreeting_from_chars():String 
+	public static function getString_from_chars():String 
 	{
 		var bytes = C.get_string_from_chars();
 		@:privateAccess
 		return String.fromUTF8(bytes);
 	}
 
-	public static function greetMe(text:String) 
+	public static function passString(text:String) 
 	{
 		C.pass_string(text);
 	}

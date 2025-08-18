@@ -1,13 +1,13 @@
 function run()
 {
 	// trace inline string
-	trace(Hello.getGreeting());
+	trace(Hello.getString());
 
 	// trace inline string
-	trace(Hello.getGreeting_from_chars());
+	trace(Hello.getString_from_chars());
 
 	// printf const char*
-	Hello.greetMe("hello from haxe äöü !");
+	Hello.passString("hello from haxe äöü !");
 
 	// trace Int from c
 	var integer:Int = Hello.getInteger();
