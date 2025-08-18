@@ -5,5 +5,6 @@ const char* getGreeting() {
 }
 
 void greetMe(const char *text) {
-    printf("%s", text);
+    // printf("%s", text); // lime does not like this, todo : investigate why
+    puts(text);
 }

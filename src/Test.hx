@@ -7,5 +7,5 @@ function run()
 	trace(Hello.getGreeting_from_chars());
 
 	// printf const char*
-	Hello.greetMe("hello from haxe äöü !"); // issue in lime, the program stalls
+	Hello.greetMe("hello from haxe äöü !");
 }
