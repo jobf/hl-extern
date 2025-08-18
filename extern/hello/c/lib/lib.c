@@ -15,3 +15,15 @@ const int getInteger(){
 void passInteger(const int *integer){
     printf("%d : integer from haxe\n", integer);
 }
+
+const char **getStringsStatic(int *count) {
+    static const char *strings[] = {
+        "haxe",
+        "python",
+        "perl"
+    };
+
+    *count = sizeof(strings) / sizeof(strings[0]);
+    
+    return strings;
+}

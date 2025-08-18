@@ -1,5 +1,3 @@
-import hl.Bytes;
-
 /**
  * bindings for c/lib/hello.c
  */
@@ -20,6 +18,10 @@ import hl.Bytes;
 	}
 
 	public static function pass_integer(int:Int):Void {}
+
+	public static function get_strings_static():hl.NativeArray<hl.Bytes> {
+		return null;
+	}
 }
 
 /**
@@ -50,5 +52,12 @@ class Hello
 
 	public static function passInteger(integer:Int) {
 		C.pass_integer(integer);
+	}
+
+	public static function getStringsStatic():Array<String> {
+		var dstrings:hl.NativeArray<hl.Bytes> = C.get_strings_static();
+		@:privateAccess
+		var strings = [for(d in dstrings) String.fromUTF8(d)];
+		return strings;
 	}
 }

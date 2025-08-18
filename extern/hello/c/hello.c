@@ -57,3 +57,26 @@ HL_PRIM void HL_NAME(pass_integer)(int *integer) {
 }
 
 DEFINE_PRIM(_VOID, pass_integer, _I32);
+
+// get_strings_static
+
+HL_PRIM varray* HL_NAME(get_strings_static)(_NO_ARG) {
+  int length;
+  const char **strings = getStringsStatic(&length);
+  printf("%d length of strings\n", length);
+
+  varray* a = hl_alloc_array(&hlt_bytes, length);
+	int i;
+	for (i = 0; i < length; i++)
+	{
+    const char *text = strings[i];
+    const uchar *utext = (uchar *)text;
+    hl_buffer *b = hl_alloc_buffer();
+    hl_buffer_str(b, utext);
+		hl_aptr(a, vbyte*)[i] = (vbyte *)hl_buffer_content(b, NULL);
+	}
+
+	return a;
+}
+
+DEFINE_PRIM(_ARR, get_strings_static, _NO_ARG);

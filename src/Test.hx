@@ -16,4 +16,7 @@ function run()
 
 	// trace Int to c
 	Hello.passInteger(1337);
+
+	// trace static strings
+	trace(Hello.getStringsStatic());
 }
