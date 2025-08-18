@@ -1,7 +1,7 @@
 
-const char* getGreeting();
+const char* getString();
 
-void greetMe(const char *text);
+void passString(const char *text);
 
 const int getInteger();
 

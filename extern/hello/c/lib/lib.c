@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-const char* getGreeting() {
+const char* getString() {
     return "Hello from c! äöü : external const char*";
 }
 
-void greetMe(const char *text) {
+void passString(const char *text) {
     printf("%s\n", text);
 }
 
@@ -24,6 +24,6 @@ const char **getStringsStatic(int *count) {
     };
 
     *count = sizeof(strings) / sizeof(strings[0]);
-    
+
     return strings;
 }

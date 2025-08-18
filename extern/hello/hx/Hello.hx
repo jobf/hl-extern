@@ -3,15 +3,15 @@
  */
 @:hlNative("hello") class C 
 {
-	public static function get_greeting():hl.Bytes {
+	public static function get_string():hl.Bytes {
 		return null;
 	}
 
-	public static function get_greeting_from_chars():hl.Bytes {
+	public static function get_string_from_chars():hl.Bytes {
 		return null;
 	}
 
-	public static function greet_me(text:String):Void {}
+	public static function pass_string(text:String):Void {}
 
 	public static function get_integer():Int {
 		return 0;
@@ -31,19 +31,19 @@ class Hello
 {
 	public static function getGreeting():hl.Bytes 
 	{
-		return C.get_greeting();
+		return C.get_string();
 	}
 
 	public static function getGreeting_from_chars():String 
 	{
-		var bytes = C.get_greeting_from_chars();
+		var bytes = C.get_string_from_chars();
 		@:privateAccess
 		return String.fromUTF8(bytes);
 	}
 
 	public static function greetMe(text:String) 
 	{
-		C.greet_me(text);
+		C.pass_string(text);
 	}
 
 	public static function getInteger() {

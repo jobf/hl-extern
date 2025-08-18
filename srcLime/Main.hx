@@ -5,5 +5,6 @@ class Main extends Application
 	override function onWindowCreate() 
 	{
 		Test.run();
+		window.close();
 	}
 }
