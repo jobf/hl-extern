@@ -5,10 +5,13 @@ const char* getGreeting() {
 }
 
 void greetMe(const char *text) {
-    // printf("%s", text); // lime does not like this, todo : investigate why
-    puts(text);
+    printf("%s\n", text);
 }
 
 const int getInteger(){
     return 0xC0FFEE;
+}
+
+void passInteger(const int *integer){
+    printf("%d : integer from haxe\n", integer);
 }

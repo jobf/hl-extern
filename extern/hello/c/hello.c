@@ -49,3 +49,11 @@ HL_PRIM int HL_NAME(get_integer)(_NO_ARG) {
 }
 
 DEFINE_PRIM(_I32, get_integer, _NO_ARG);
+
+//------ pass_integer(integer)
+
+HL_PRIM void HL_NAME(pass_integer)(int *integer) {
+  passInteger(integer);
+}
+
+DEFINE_PRIM(_VOID, pass_integer, _I32);

@@ -18,6 +18,8 @@ import hl.Bytes;
 	public static function get_integer():Int {
 		return 0;
 	}
+
+	public static function pass_integer(int:Int):Void {}
 }
 
 /**
@@ -44,5 +46,9 @@ class Hello
 
 	public static function getInteger() {
 		return C.get_integer();
+	}
+
+	public static function passInteger(integer:Int) {
+		C.pass_integer(integer);
 	}
 }
