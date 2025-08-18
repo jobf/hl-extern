@@ -8,3 +8,7 @@ void greetMe(const char *text) {
     // printf("%s", text); // lime does not like this, todo : investigate why
     puts(text);
 }
+
+const int getInteger(){
+    return 0xC0FFEE;
+}
