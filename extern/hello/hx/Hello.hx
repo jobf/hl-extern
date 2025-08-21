@@ -1,27 +1,22 @@
 /**
  * bindings for c/lib/hello.c
  */
-@:hlNative("hello") class C 
+@:hlNative("hello") extern class C 
 {
-	public static function get_string():hl.Bytes {
-		return null;
-	}
+	static function get_string():hl.Bytes;
 
-	public static function get_string_from_chars():hl.Bytes {
-		return null;
-	}
+	static function get_string_from_chars():hl.Bytes;
 
-	public static function pass_string(text:String):Void {}
+	static function pass_string(text:String):Void;
 
-	public static function get_integer():Int {
-		return 0;
-	}
+	static function get_integer():Int;
 
-	public static function pass_integer(int:Int):Void {}
+	static function pass_integer(int:Int):Void;
 
-	public static function get_strings_static():hl.NativeArray<hl.Bytes> {
-		return null;
-	}
+	static function get_strings_static():hl.NativeArray<hl.Bytes>;
+
+	// work in progress
+	// static function get_strings_dynamic(text:String, repeats:Int):hl.NativeArray<hl.Bytes>;
 }
 
 /**
@@ -29,9 +24,11 @@
  */
 class Hello 
 {
-	public static function getString():hl.Bytes 
+	public static function getString():String
 	{
-		return C.get_string();
+		var bytes = C.get_string();
+		@:privateAccess
+		return String.fromUTF8(bytes);
 	}
 
 	public static function getString_from_chars():String 
@@ -60,4 +57,12 @@ class Hello
 		var strings = [for(d in dstrings) String.fromUTF8(d)];
 		return strings;
 	}
+
+	// work in progress
+	// public static function getStringsDynamic(text:String, repeats:Int):Array<String> {
+	// 	var dstrings:hl.NativeArray<hl.Bytes> = C.get_strings_dynamic(text, repeats);
+	// 	@:privateAccess
+	// 	var strings = [for(d in dstrings) String.fromUTF8(d)];
+	// 	return strings;
+	// }
 }
